@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud S.News - أخبار كرة القدم</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #000000, #007A3D, #FFFFFF, #FF0000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            background-color: rgba(255, 255, 255, 0.1);
+            text-align: center;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        .news-container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+        }
+        .news-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+        }
+        .news-item h2 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+        .news-item p {
+            color: #f1f1f1;
+        }
+        .contact-section {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-section h2 {
+            color: #ffffff;
+        }
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-section input,
+        .contact-section textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+        }
+        .contact-section button {
+            padding: 0.7rem;
+            border: none;
+            background-color: #007A3D;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            margin-top: 2rem;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const newsContainer = document.getElementById("news-container");
+            const sampleNews = [
+                {
+                    title: "صفقة نارية لريال مدريد",
+                    content: "ريال مدريد يتعاقد مع نجم كبير استعدادًا للموسم الجديد."
+                },
+                {
+                    title: "المنتخب المصري يفوز ودياً",
+                    content: "فوز المنتخب المصري في المباراة الودية أمام الجزائر بثلاثية نظيفة."
+                }
+            ];
+            setInterval(() => {
+                const item = sampleNews[Math.floor(Math.random() * sampleNews.length)];
+                const div = document.createElement("div");
+                div.className = "news-item";
+                div.innerHTML = `<h2>${item.title}</h2><p>${item.content}</p>`;
+                newsContainer.prepend(div);
+            }, 10000);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Mahmoud S.News - أخبار كرة القدم</h1>
+    </header>
+    <nav>
+        <a href="#news">الأخبار</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
+    <div id="news" class="news-container">
+        <div class="news-item">
+            <h2>فوز الأهلي على الزمالك في قمة الدوري</h2>
+            <p>حقق النادي الأهلي فوزًا مثيرًا على غريمه الزمالك بنتيجة 2-1 في مباراة شهدت أداء قوي من الطرفين.</p>
+        </div>
+        <div class="news-item">
+            <h2>برشلونة يعلن عن صفقته الجديدة</h2>
+            <p>أعلن نادي برشلونة عن ضم لاعب الوسط الشاب من أياكس أمستردام في صفقة تمتد لأربع سنوات.</p>
+        </div>
+    </div>
+    <div id="contact" class="contact-section">
+        <h2>تواصل معنا</h2>
+        <form>
+            <input type="text" placeholder="الاسم" required>
+            <input type="email" placeholder="البريد الإلكتروني" required>
+            <textarea rows="4" placeholder="رسالتك" required></textarea>
+            <button type="submit">إرسال</button>
+        </form>
+    </div>
+    <footer>
+        &copy; 2025 Mahmoud S.News - جميع الحقوق محفوظة
+    </footer>
+</body>
+</html>
